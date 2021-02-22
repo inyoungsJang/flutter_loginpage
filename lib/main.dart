@@ -6,26 +6,31 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: "LOGINPAGE",
-      home: Login(),
+      debugShowCheckedModeBanner: false, //왼쪽상단 DEBUG 태그 비활성화
+      title: "MyPAGE",
+      home: MyPage(),
     );
   }
 }
 
-class Login extends StatelessWidget {
+class MyPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.amber[800],
+      backgroundColor: Colors.lime,
       appBar: AppBar(
-        title: Text("LOGIN"),
-        backgroundColor: Colors.amber[700],
+        title: Text(
+          "IMFORMATION",
+          style: TextStyle(
+            color: Colors.grey[900],
+          ),
+        ),
+        backgroundColor: Colors.lime[600],
         centerTitle: true,
         elevation: 0.0,
       ),
       body: Padding(
-        padding: EdgeInsets.fromLTRB(30.0, 40.0, 0.0, 0.0),
+        padding: EdgeInsets.fromLTRB(20.0, 20.0, 0.0, 0.0), //왼쪽에 30마진
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start, //왼쪽으로 정렬됌
           children: [
@@ -36,53 +41,60 @@ class Login extends StatelessWidget {
               ),
             ),
             Divider(
-              height: 60.0, //상하 30픽셀씩
-              color: Colors.grey[850],
+              height: 40.0, //상하 20픽셀씩
+              color: Colors.grey[900],
               thickness: 0.5, //선두께
-              endIndent: 30.0, //끝에서 얼마큼 떨어져있을지
+              endIndent: 20.0, //끝에서 얼마큼 떨어져있을지
             ),
             Text(
-              "NAME",
+              "name",
               style: TextStyle(
-                color: Colors.white,
                 letterSpacing: 2.0,
               ),
             ),
-            SizedBox(
-              height: 10.0,
-            ),
             Text(
-              "INYOUNG",
+              "HIP CAT",
               style: TextStyle(
-                  color: Colors.white,
                   letterSpacing: 2.0,
-                  fontSize: 28.0,
+                  fontSize: 20.0,
                   fontWeight: FontWeight.bold),
             ),
             SizedBox(
-              height: 30.0,
+              height: 20.0,
             ),
             Text(
-              "USER POWER LEVEL",
+              "year - sex",
               style: TextStyle(
                 letterSpacing: 2.0,
-                color: Colors.white,
+              ),
+            ),
+            Text(
+              "4 - girl",
+              style: TextStyle(
+                letterSpacing: 2.0,
+                fontSize: 20.0,
+                fontWeight: FontWeight.bold,
               ),
             ),
             SizedBox(
-              height: 10.0,
+              height: 20.0,
             ),
             Text(
-              "20",
+              "kind",
               style: TextStyle(
-                fontSize: 28.0,
+                letterSpacing: 2.0,
+              ),
+            ),
+            Text(
+              "American Short hair Cat",
+              style: TextStyle(
+                fontSize: 20,
                 fontWeight: FontWeight.bold,
                 letterSpacing: 2.0,
-                color: Colors.white,
               ),
             ),
             SizedBox(
-              height: 30.0,
+              height: 20.0,
             ),
             Row(
               children: [
@@ -91,7 +103,7 @@ class Login extends StatelessWidget {
                   width: 10.0,
                 ),
                 Text(
-                  "using lightsaber",
+                  "neutralization",
                   style: TextStyle(
                     fontSize: 16.0,
                     letterSpacing: 1.0,
@@ -106,7 +118,7 @@ class Login extends StatelessWidget {
                   width: 10.0,
                 ),
                 Text(
-                  "face hero zoo",
+                  "helath",
                   style: TextStyle(
                     fontSize: 16.0,
                     letterSpacing: 1.0,
@@ -129,13 +141,24 @@ class Login extends StatelessWidget {
                 ),
               ],
             ),
-            Center(
-              child: CircleAvatar(
-                backgroundImage: AssetImage('assets/cat.png'),
-                radius: 40.0,
-                backgroundColor: Colors.amber[800],
-              ),
-            )
+            SizedBox(
+              height: 50,
+            ),
+            Column(
+              children: [
+                Center(
+                  child: CircleAvatar(
+                    backgroundImage: AssetImage('assets/cat.png'),
+                    radius: 25.0,
+                    backgroundColor: Colors.lime[300],
+                  ),
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Text("The above information is not false.")
+              ],
+            ),
           ],
         ),
       ),
