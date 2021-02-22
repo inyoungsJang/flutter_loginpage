@@ -6,6 +6,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: "LOGINPAGE",
       home: Login(),
     );
@@ -28,21 +29,31 @@ class Login extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start, //왼쪽으로 정렬됌
           children: [
+            Center(
+              child: CircleAvatar(
+                backgroundImage: AssetImage('assets/catmove.gif'),
+                radius: 60.0,
+              ),
+            ),
+            Divider(
+              height: 60.0, //상하 30픽셀씩
+              color: Colors.grey[850],
+              thickness: 0.5, //선두께
+              endIndent: 30.0, //끝에서 얼마큼 떨어져있을지
+            ),
             Text(
               "NAME",
               style: TextStyle(
-                  //색상 : 흰 , 자간 :2.0
-                  color: Colors.white,
-                  letterSpacing: 2.0),
+                color: Colors.white,
+                letterSpacing: 2.0,
+              ),
             ),
             SizedBox(
-              //크기를 사용자정의에따라
               height: 10.0,
             ),
             Text(
               "INYOUNG",
               style: TextStyle(
-                  //색상 흰, 자간 2.0 , 크기 28, 두께 두껍게
                   color: Colors.white,
                   letterSpacing: 2.0,
                   fontSize: 28.0,
@@ -70,11 +81,14 @@ class Login extends StatelessWidget {
                 color: Colors.white,
               ),
             ),
+            SizedBox(
+              height: 30.0,
+            ),
             Row(
               children: [
                 Icon(Icons.check_circle_outline_outlined),
-                Padding(
-                  padding: EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 10.0),
+                SizedBox(
+                  width: 10.0,
                 ),
                 Text(
                   "using lightsaber",
@@ -84,6 +98,43 @@ class Login extends StatelessWidget {
                   ),
                 ),
               ],
+            ),
+            Row(
+              children: [
+                Icon(Icons.check_circle_outline_outlined),
+                SizedBox(
+                  width: 10.0,
+                ),
+                Text(
+                  "face hero zoo",
+                  style: TextStyle(
+                    fontSize: 16.0,
+                    letterSpacing: 1.0,
+                  ),
+                ),
+              ],
+            ),
+            Row(
+              children: [
+                Icon(Icons.check_circle_outline_outlined),
+                SizedBox(
+                  width: 10.0,
+                ),
+                Text(
+                  "fire flames",
+                  style: TextStyle(
+                    fontSize: 16.0,
+                    letterSpacing: 1.0,
+                  ),
+                ),
+              ],
+            ),
+            Center(
+              child: CircleAvatar(
+                backgroundImage: AssetImage('assets/cat.png'),
+                radius: 40.0,
+                backgroundColor: Colors.amber[800],
+              ),
             )
           ],
         ),
